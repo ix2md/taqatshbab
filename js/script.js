@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const canvas = await html2canvas(cardElement, {
                 scale: 3, // High quality
                 useCORS: true, // Allow cross-origin images
-                allowTaint: true, // Allow local file images (for dev mode)
+                allowTaint: false,
                 backgroundColor: '#FFFBF2',
                 logging: false,
                 imageTimeout: 0,
