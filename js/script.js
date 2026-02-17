@@ -3,6 +3,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const cardName = document.getElementById('card-name-placeholder');
     const downloadBtn = document.getElementById('btn-download-img');
     const cardElement = document.getElementById('greeting-card');
+    const currentYearSpan = document.getElementById('current-year');
+
+    // Set Dynamic Year
+    if (currentYearSpan) {
+        currentYearSpan.textContent = new Date().getFullYear();
+    }
 
     // Update Name Live
     nameInput.addEventListener('input', (e) => {
