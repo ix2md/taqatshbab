@@ -122,6 +122,36 @@ body {
   align-items: flex-start;
 }
 
+/* Top Left Decoration */
+.top-left-decoration {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 5;
+  width: 60px; /* Adjust size as needed */
+}
+
+.top-left-decoration img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Top Right Decoration */
+.top-right-decoration {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 5;
+  width: 80px; /* Adjust size as needed */
+}
+
+.top-right-decoration img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
 .association-logo {
   max-height: 80px;
   margin-top: 20px;
