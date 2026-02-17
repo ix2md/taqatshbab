@@ -84,19 +84,25 @@ body {
 }
 
 /* Decorative Watermark/Pattern */
-.greeting-card::before {
-  content: "";
+/* Decorative Watermark/Pattern */
+.watermark-container {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); /* Center it */
   width: 80%;
-  height: 80%;
-  background: url("img/logo.png") no-repeat center center;
-  background-size: contain;
-  opacity: 0.05;
+  aspect-ratio: 1/1; /* Ensure square aspect ratio if logo is square */
   pointer-events: none;
   z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.watermark-logo {
+  width: 100%;
+  opacity: 0.05;
+  object-fit: contain;
 }
 
 .card-content {

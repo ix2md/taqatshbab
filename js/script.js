@@ -30,9 +30,16 @@ document.addEventListener('DOMContentLoaded', () => {
             // Options for html-to-image
             const options = {
                 quality: 0.95,
-                backgroundColor: '#FFFBF2', // Match card bg to avoid transparent edges
-                pixelRatio: 2, // Higher resolution
+                backgroundColor: '#FFFBF2', // Match card bg
+                pixelRatio: 3, // Higher resolution for better quality
+                cacheBust: true, // Force reload images
+                style: {
+                    'transform': 'scale(1)', // Start with no scale
+                }
             };
+            
+            // Wait a moment for any reflows
+            await new Promise(resolve => setTimeout(resolve, 100));
 
             const dataUrl = await htmlToImage.toPng(cardElement, options);
             
