@@ -1,0 +1,270 @@
+:root {
+  --primary-color: #8e6e48; /* Gold/Bronze */
+  --secondary-color: #2c3e50; /* Dark Blue/Grey */
+  --bg-color: #fdfbf7; /* Cream/Off-white */
+  --card-bg: #fffbf2; /* Warm Cream */
+  --text-color: #4a4a4a;
+  --accent-color: #d4af37; /* Bright Gold */
+  --font-heading: "Amiri", serif;
+  --font-body: "Cairo", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  direction: rtl;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Layout */
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.app-header h1 {
+  color: var(--primary-color);
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+}
+
+/* Card Styles */
+.card-preview-container {
+  padding: 20px;
+  border-radius: 10px;
+  /* Optional: Show a subtle border around the preview area on desktop */
+  display: flex;
+  justify-content: center;
+}
+
+.greeting-card {
+  width: 100%;
+  max-width: 400px; /* Standard Mobile/Portrait size */
+  aspect-ratio: 9/16; /* Story format */
+  background-color: var(--card-bg);
+  background-image: radial-gradient(#e8dcc8 1px, transparent 1px);
+  background-size: 20px 20px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border: 8px solid white; /* Frame effect */
+  padding: 20px;
+}
+
+/* Decorative Watermark/Pattern */
+.greeting-card::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  background: url("img/logo.png") no-repeat center center;
+  background-size: contain;
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.card-content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Header Decoration (Lanterns css placeholder) */
+.card-header-decoration {
+  height: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.association-logo {
+  max-height: 80px;
+  margin-top: 20px;
+}
+
+/* Body Text */
+.card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.greeting-title {
+  font-family: var(--font-heading);
+  color: var(--primary-color);
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.greeting-text {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.greeting-dua {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-top: 10px;
+}
+
+/* Footer / Name */
+.card-footer-section {
+  margin-bottom: 40px; /* Space for bottom decoration */
+}
+
+.from-label {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+.card-name {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  color: var(--secondary-color);
+  min-height: 40px; /* Prevent jump */
+}
+
+/* Bottom Decoration (Mosque Silhouette) */
+.card-bottom-decoration {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background:
+    linear-gradient(to top, rgba(142, 110, 72, 0.2), transparent),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%238E6E48' fill-opacity='0.2' d='M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,224C672,245,768,267,864,250.7C960,235,1056,181,1152,165.3C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Controls */
+.controls-container {
+  width: 100%;
+  max-width: 400px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #eee;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  flex: 1;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-family: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.2s,
+    opacity 0.2s;
+  font-size: 1rem;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-secondary {
+  background-color: #eee;
+  color: #333;
+}
+
+.app-footer {
+  margin-top: 40px;
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+/* Media Queries */
+@media (max-width: 600px) {
+  .main-container {
+    padding: 10px;
+  }
+
+  .greeting-card {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تهنئة رمضان - جمعية طاقات شباب</title>
+    <meta
+      name="description"
+      content="أنشئ بطاقة تهنئة خاصة بك بمناسبة شهر رمضان المبارك"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html-to-image/1.11.11/html-to-image.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  </head>
+  <body>
+    <div class="main-container">
+      <header class="app-header">
+        <h1>تهنئة رمضان</h1>
+        <p>شارك فرحة الشهر الفضيل ببطاقة باسمك</p>
+      </header>
+
+      <main class="content-wrapper">
+        <!-- Card Preview Section -->
+        <div class="card-preview-container">
+          <div id="greeting-card" class="greeting-card">
+            <div class="card-content">
+              <!-- Decorative Top -->
+              <div class="card-header-decoration">
+                <div class="lanterns">
+                  <!-- Simple CSS/SVG lanterns will be added in CSS or here -->
+                  <img
+                    src="img/logo.png"
+                    alt="شعار الجمعية"
+                    class="association-logo"
+                    onerror="this.style.display = 'none'"
+                  />
+                </div>
+              </div>
+
+              <!-- Main Text -->
+              <div class="card-body">
+                <h2 class="greeting-title">مُبارك عَليكم الشَّهر</h2>
+
+                <p class="greeting-text">
+                  أهنئكم بقدوم شهر رمضان المبارك<br />
+                  أعاده الله علينا وعليكم أعوامًا عديدة<br />
+                  وأزمنة مديدة بالخير واليمن والبركة
+                </p>
+
+                <p class="greeting-dua">تقبل الله منا ومنكم صالح الأعمال</p>
+              </div>
+
+              <!-- Footer / Name -->
+              <div class="card-footer-section">
+                <p class="from-label">اخوكم/اختكم</p>
+                <h3 id="card-name-placeholder" class="card-name">الاسم هنا</h3>
+              </div>
+
+              <!-- Decorative Bottom -->
+              <div class="card-bottom-decoration"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Controls Section -->
+        <div class="controls-container">
+          <div class="input-group">
+            <label for="name-input">الاسم الثلاثي</label>
+            <input
+              type="text"
+              id="name-input"
+              placeholder="اكتب اسمك هنا..."
+              maxlength="30"
+            />
+          </div>
+
+          <div class="actions">
+            <button id="btn-download-img" class="btn btn-primary">
+              <span>تحميل الصورة (PNG)</span>
+            </button>
+            <!-- <button id="btn-download-pdf" class="btn btn-secondary">
+                        <span>تحميل ملف (PDF)</span>
+                    </button> -->
+          </div>
+        </div>
+      </main>
+
+      <footer class="app-footer">
+        <p>جميع الحقوق محفوظة &copy; 2024</p>
+      </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
