@@ -27,33 +27,35 @@ document.addEventListener('DOMContentLoaded', () => {
         downloadBtn.disabled = true;
 
         try {
-            // Options for html-to-image
-            const options = {
-                quality: 1.0,
-                backgroundColor: '#FFFBF2',
-                pixelRatio: 3,
-                cacheBust: true,
+            // Use html2canvas to capture the card
+            const canvas = await html2canvas(cardElement, {
+                scale: 3, // High quality
                 useCORS: true, // Allow cross-origin images
-                skipFonts: false,
-            };
+                allowTaint: true, // Allow local file images (for dev mode)
+                backgroundColor: '#FFFBF2',
+                logging: false,
+                imageTimeout: 0,
+            });
             
-            // Wait for images to load
-            await new Promise(resolve => setTimeout(resolve, 300));
-
-            const dataUrl = await htmlToImage.toJpeg(cardElement, options);
-            
-            // Create link and trigger download
-            const link = document.createElement('a');
-            link.download = `tehnia-ramadan-${new Date().getTime()}.jpg`;
-            link.href = dataUrl;
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
+            // Convert canvas to blob and download
+            canvas.toBlob((blob) => {
+                const url = URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                link.download = `tehnia-ramadan-${new Date().getTime()}.jpg`;
+                link.href = url;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                URL.revokeObjectURL(url);
+                
+                // Reset button
+                downloadBtn.textContent = originalText;
+                downloadBtn.disabled = false;
+            }, 'image/jpeg', 0.95);
 
         } catch (error) {
             console.error('Error generating image:', error);
             alert('حدث خطأ أثناء تحميل الصورة. يرجى المحاولة مرة أخرى.');
-        } finally {
             downloadBtn.textContent = originalText;
             downloadBtn.disabled = false;
         }
