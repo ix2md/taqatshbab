@@ -29,23 +29,22 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             // Options for html-to-image
             const options = {
-                quality: 0.95,
-                backgroundColor: '#FFFBF2', // Match card bg
-                pixelRatio: 3, // Higher resolution for better quality
-                cacheBust: true, // Force reload images
-                style: {
-                    'transform': 'scale(1)', // Start with no scale
-                }
+                quality: 1.0,
+                backgroundColor: '#FFFBF2',
+                pixelRatio: 3,
+                cacheBust: true,
+                useCORS: true, // Allow cross-origin images
+                skipFonts: false,
             };
             
-            // Wait a moment for any reflows
-            await new Promise(resolve => setTimeout(resolve, 100));
+            // Wait for images to load
+            await new Promise(resolve => setTimeout(resolve, 300));
 
-            const dataUrl = await htmlToImage.toPng(cardElement, options);
+            const dataUrl = await htmlToImage.toJpeg(cardElement, options);
             
             // Create link and trigger download
             const link = document.createElement('a');
-            link.download = `tehnia-ramadan-${new Date().getTime()}.png`;
+            link.download = `tehnia-ramadan-${new Date().getTime()}.jpg`;
             link.href = dataUrl;
             document.body.appendChild(link);
             link.click();
