@@ -193,6 +193,40 @@ body {
   pointer-events: none;
 }
 
+/* Contact Info Section - Bottom Left */
+.contact-info-container {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.7rem;
+  color: var(--text-color);
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  direction: ltr;
+  text-align: left;
+}
+
+.contact-item img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.contact-item p {
+  margin: 0;
+  font-size: 0.7rem;
+  line-height: 1;
+  white-space: nowrap;
+}
+
 /* Controls */
 .controls-container {
   width: 100%;
