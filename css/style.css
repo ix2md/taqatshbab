@@ -85,7 +85,7 @@ body {
   flex-direction: column;
   text-align: center;
   border: 8px solid white; /* Frame effect */
-  padding: 20px;
+  /* padding: 20px; */
 }
 
 /* Decorative Watermark/Pattern */

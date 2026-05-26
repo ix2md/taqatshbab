@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ctx.textAlign = "center";
     
     // إحداثيات النص (المنتصف أفقياً، وقبل النهاية بـ 100 بكسل عمودياً)
-    ctx.fillText(text, canvas.width / 2, canvas.height - 195);
+    ctx.fillText(text, canvas.width / 2, canvas.height - 185);
 }
 
 // تشغيل الرسم بعد تحميل الصورة والخط معاً
