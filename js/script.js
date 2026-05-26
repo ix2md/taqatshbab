@@ -20,12 +20,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // إضافة النص فوقها
     const text = nameInput.value.trim() || "الاسم هنا";
-    ctx.font = "bold 65px Amiri, serif"; // اختر الخط المناسب
+    ctx.font = "bold 60px Amiri, serif"; // اختر الخط المناسب
     ctx.fillStyle = "#2c3e50"; 
     ctx.textAlign = "center";
     
     // إحداثيات النص (المنتصف أفقياً، وقبل النهاية بـ 100 بكسل عمودياً)
-    ctx.fillText(text, canvas.width / 2, canvas.height - 185);
+    ctx.fillText(text, canvas.width / 2, canvas.height - 130);
 }
 
 // تشغيل الرسم بعد تحميل الصورة والخط معاً
