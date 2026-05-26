@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const imageLoader = document.getElementById('imageLoader');
     const img = new Image();
     img.crossOrigin = 'anonymous';
-    img.src = 'img/3.jpeg';
+    img.src = 'img/4.jpeg';
     function draw() {
     // ضبط حجم الكانفاس ليكون بنفس حجم الصورة الأصلي
     canvas.width = img.width;
